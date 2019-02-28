@@ -5,7 +5,7 @@ defmodule Perbualan.MixProject do
     [
       app: :perbualan,
       version: "0.1.0",
-      elixir: "~> 1.5",
+      elixir: "~> 1.8.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -42,7 +42,9 @@ defmodule Perbualan.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 

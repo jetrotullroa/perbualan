@@ -1,0 +1,28 @@
+<h1>Login</h1>
+
+<%= form_for @conn,
+    Routes.user_path(@conn, :session),
+    [as: :session, id: "session-form"],
+    fn f -> %>
+
+  <div class="form-group">
+    <%= label f, :username, class: "control-input" %>
+    <%= text_input f, :username, class: "form-control" %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :password, class: "control-input" %>
+    <%= password_input f, :password, class: "form-control" %>
+    <%= error_tag f, :password %>
+  </div>
+
+ 	<div class="form-group">
+    <%= link "Don't have an account? Click here to register", to: "/register" %>
+  </div>
+  
+  <div class="action">
+    <%= submit "Login", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
