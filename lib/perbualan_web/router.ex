@@ -9,14 +9,22 @@ defmodule PerbualanWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :user_session do
+    plug(PerbualanWeb.Plugs.LoadUser)
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", PerbualanWeb do
-    pipe_through :browser
+    pipe_through [:browser, :user_session]
 
     get "/", PageController, :index
+    get "/register", UserController, :register
+    get "/login", UserController, :login
+    post "/session", UserController, :session
+    resources "/users", UserController, only: [:create]
   end
 
   # Other scopes may use custom stacks.

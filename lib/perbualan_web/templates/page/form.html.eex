@@ -1,0 +1,13 @@
+<form id="chat-room">
+  <div class="row">
+    <div class="column column-100">
+      <input
+        id="user-name"
+        type="hidden"
+        value="<%= @current_user.username %>"
+      />
+      <textarea id="user-msg" placeholder="Your message here"></textarea>
+    </div>
+  </div>
+  <button class="button" type="submit">Send</button>
+</form>
