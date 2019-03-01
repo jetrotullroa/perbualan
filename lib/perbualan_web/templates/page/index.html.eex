@@ -1,13 +1,11 @@
-<div class="container" style="width: 100%; border: 2px solid black;
-                              height: 50vh; padding: 1rem;
-                              margin-bottom: 1rem;
-                              overflow-y: scroll; overflow-x: none;"
+<div id="chat-box"
+     class="container" 
+     style="width: 100%; border: 2px solid black;
+            height: 50vh; padding: 1rem;
+            margin-bottom: 1rem; overflow-y: scroll;
+            overflow-x: none;"
 >
 </div>
 
-<%= if @current_user do %>
-  <b><%= @current_user.username %></b>
-  <%= render "form.html", current_user: @current_user %> 
-<%= else %>
-  <%= link "Click here to register to join the chat. . .", to: "/register", class: "button button-clear" %>  
-<% end %>
+<b><%= unless !@current_user, do: @current_user.username %></b>
+<%= render "form.html", current_user: @current_user %> 
