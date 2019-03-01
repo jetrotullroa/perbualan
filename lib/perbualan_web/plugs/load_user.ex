@@ -5,9 +5,14 @@ defmodule PerbualanWeb.Plugs.LoadUser do
   def init(_opts), do: nil
 
   def call(conn, _opts) do
-    user_id = get_session(conn, :user_id)
-    user = user_id && Accounts.get_user_by_id(user_id)
+    case get_session(conn, :user_id) do
+      nil ->
+        assign(conn, :current_user, nil)
 
-    assign(conn, :current_user, user)
+      user_id ->
+        user = user_id && Accounts.get_user_by_id(user_id)
+
+        assign(conn, :current_user, user)
+    end
   end
 end
