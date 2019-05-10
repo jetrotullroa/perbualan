@@ -25,6 +25,12 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Live View Config
+config :perbualan, PerbualanWeb.Endpoint,
+  live_view: [
+    signing_salt: "b1dK11/rO3+rxVGEQFr6OnKUX0uURpCl"
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

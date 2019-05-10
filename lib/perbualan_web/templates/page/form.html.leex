@@ -1,0 +1,26 @@
+<% IO.inspect @current_user %>
+<%= if @current_user do %>
+  <b><%= @current_user.username %></b>
+  <form action="#" phx-submit="send">
+    <%= hidden_input :message, :user_id, value: @current_user.id %>
+    <%= textarea :message, :content, placeholder: "Message here" %>
+    <%= submit "Sending", phx_disable_with: "Sending..." %>
+  </form>
+<% else %>
+
+<form id="chat-form">
+  <div class="row">
+    <div class="column column-100">
+      <input
+        id="user-name"
+        type="hidden"
+        disabled
+      />
+      <textarea id="user-msg" placeholder="" disabled></textarea>
+    </div>
+  </div>
+  <button class="button" type="submit" disabled>Send</button>
+</form>
+<%= link "Click here to register to join the chat. . .", to: "/register", class: "button button-clear" %>  
+
+<% end %>

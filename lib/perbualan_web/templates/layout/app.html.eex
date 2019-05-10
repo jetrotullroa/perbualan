@@ -19,6 +19,13 @@
           <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
         </a>
       </section>
+      <div class="row">
+      <div class="column">&nbsp;</div>
+      <div class="column">
+      <h3 class="text-center">L I V E   V I E W</h3>
+      </div>
+      <div class="column">&nbsp;</div>
+      </div>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
