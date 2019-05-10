@@ -1,6 +1,8 @@
 defmodule PerbualanWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :perbualan
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", PerbualanWeb.UserSocket,
     websocket: true,
     longpoll: false

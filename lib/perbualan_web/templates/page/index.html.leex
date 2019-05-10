@@ -1,0 +1,18 @@
+<div id="chat-box"
+     class="container" 
+     style="width: 100%; border: 2px solid black;
+            height: 50vh; padding: 1rem;
+            margin-bottom: 1rem; overflow-y: scroll;
+            overflow-x: none;"
+>
+<%= for message <- @messages do %>
+  <p>
+  <b><%= message.user.username || "anonymous" %></b>
+  &nbsp;
+  :
+  &nbsp;
+  <span><%= message.content %></span>
+  </p>
+<% end %>
+</div>
+<%= render "form.html", changeset: @changeset, current_user: @current_user, message: @messages%>

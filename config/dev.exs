@@ -52,7 +52,8 @@ config :perbualan, PerbualanWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/perbualan_web/views/.*(ex)$},
-      ~r{lib/perbualan_web/templates/.*(eex)$}
+      ~r{lib/perbualan_web/templates/.*(eex)$},
+      ~r{lib/my_app_web/live/.*(ex)$}
     ]
   ]
 
